@@ -27,6 +27,7 @@ function doCalc() {
     document.getElementById("result").innerHTML = result;
 }
 
+// 섭씨를 화씨로 변경하기
 function changeFah() {
     var celsius = parseInt(document.getElementById("celsius").value);
 
@@ -78,6 +79,7 @@ function example() {
     a.drive();
 }
 
+// 비밀번호 검증하기
 function doValidate() {
     var passwd = document.getElementById("pwd").value;
 
@@ -112,6 +114,7 @@ function getDiceNumber() {
     var r = Math.floor(Math.random() * 6 + 1);
 }
 
+// 항공 요금 계산기
 function setCharge() {
     var adult = document.getElementById("adult");
     var young = document.getElementById("young");
@@ -130,40 +133,46 @@ function setCharge() {
     var tax = 0.05;
 
     if (la.checked) {
-        console.log(la.checked);
-        console.log(bk.checked);
-        console.log(sd.checked);
 
         destination = 932000;
 
-        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20))) * tax;
-
+        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20)));
+        charge = charge + (charge * tax);
     }
 
     if (bk.checked) {
-        console.log(la.checked);
-        console.log(bk.checked);
-        console.log(sd.checked);
 
         destination = 525000;
 
-        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20))) * tax;
-
+        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20)));
+        charge = charge + (charge * tax);
     }
 
     if (sd.checked) {
-        console.log(la.checked);
-        console.log(bk.checked);
-        console.log(sd.checked);
 
         destination = 1103350;
 
-        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20))) * tax;
-
+        charge = ((adult_value * destination) + ( young_value * (destination * 0.20)) + (children_value * (destination * 0.20)));
+        charge = charge + (charge * tax);
     }
 
+    document.getElementById("result").innerHTML = charge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
+}
 
-    document.getElementById("result").innerHTML = charge + "원";
+function country() {
+    var country = "";
+    var la = document.getElementById("la");
+    var bk = document.getElementById("bk");
+    var sd = document.getElementById("sd");
 
+    if (la.checked) {
+        country = "932,000";
 
+    } else if (bk.checked) {
+        country = "525,000";
+    } else if (sd.checked) {
+        country = "1,103,350";
+    }
+    console.log(country);
+    document.getElementById("country").innerHTML = country + "원";
 }

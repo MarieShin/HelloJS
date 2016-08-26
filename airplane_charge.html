@@ -56,17 +56,17 @@
         <label class="control-label col-sm-2">목적지 :</label>
         <div class="col-sm-10 destination">
             <div class="col-md-3">
-                <label class="radio"><input type="radio" name="radio" id="la" checked>LA</label>
+                <label class="radio" onclick="country()"><input type="radio" name="radio" id="la" checked>LA</label>
             </div>
-            <div class=" col-md-3">
+            <div class=" col-md-3" onclick="country()">
                 <label class="radio"><input type="radio" name="radio" id="bk">방콕</label>
             </div>
-            <div class=" col-md-3">
+            <div class=" col-md-3" onclick="country()">
                 <label class="radio"><input type="radio" name="radio" id="sd">시드니</label>
             </div>
 
             <div class="col-md-3">
-                <button type="button" class="btn btn-primary btn_charge" onclick="setCharge()">계산하기</button>
+                <span class="badge" id="country"></span>
             </div>
         </div>
     </div>
@@ -76,6 +76,7 @@
         <label class="control-label col-sm-2">항공료 :</label>
         <div class="col-sm-10"><span id="result"></span></div>
     </div>
+    <button type="button" class="btn btn-primary btn_charge btn-lg" onclick="setCharge()">계산하기</button>
 
 </div>
 <script src="js/main.js"></script>

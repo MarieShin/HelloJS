@@ -24,6 +24,11 @@ div.destination {
     padding-left: 50px;
 }
 
+span.badge {
+    padding: 10px;
+    margin-top: 5px;
+}
+
 
 /** 패스워드 검증 */
 h1.title_pwd {
